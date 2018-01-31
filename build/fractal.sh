@@ -8,7 +8,7 @@ test -f bin/main.out && \
 
 echo '--------------------' > bin/debug/stderr.log
 
-make main_icc 2>> bin/debug/stderr.log
+make main_gcc 2>> bin/debug/stderr.log
 
 echo '--------------------' >> bin/debug/stderr.log
 
