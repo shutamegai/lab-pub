@@ -41,6 +41,7 @@
 *.su
 *.idb
 *.pdb
+*.log
 
 # Kernel Module Compile Results
 *.mod*
@@ -50,3 +51,14 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Tex files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.gz
+*.toc
+
+*.DS_Store
