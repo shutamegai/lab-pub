@@ -58,7 +58,7 @@ dkms.conf
 *.blg
 *.log
 *.out
-*.gz
+#*.gz
 *.toc
 
 *.DS_Store
