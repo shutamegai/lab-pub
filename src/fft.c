@@ -35,7 +35,7 @@ int main (void) {
      out = (fftw_complex*)fftw_malloc(mem_size);
 
      
-     fft_dat = fopen( ".//bin//data//stage//7//fractal_p.txt" , "r" );
+     fft_dat = fopen( ".//bin//data//stage//4//fractal_p.txt" , "r" );
 
      if (fft_dat == NULL) {
           printf("FILE ERROR!\n"); return 0;
@@ -69,12 +69,12 @@ int main (void) {
           out_2r = out[i][0]*out[i][0];
           out_2i = out[i][1]*out[i][1];
           
-          //if (i!=0) printf("%18.10f %18.10f\n", (double)(sample)/i, sqrt(out_2r+out_2i));
+          if (i!=0) printf("%18.10f %18.10f\n", (double)(sample)/i, sqrt(out_2r+out_2i));
 	 }
      out_2r = out[0][0]*out[0][0];
      out_2i = out[0][1]*out[0][1];
 
-     //printf("%18.10f %18.10f\n", 0.0, sqrt(out_2r+out_2i));
+     printf("%18.10f %18.10f\n", 0.0, sqrt(out_2r+out_2i));
 
      
      // peak

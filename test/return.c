@@ -38,7 +38,7 @@ void FRACTAL_return (int FRACTAL_stage_num, int num, FRACTAL fractal) {
           iteration = 0;
 
           // random walk
-#pragma vector always
+// #pragma vector always
           for (n=0; n<LIMIT; n++) {
                r = genrand_int31();
                switch (r%4) {

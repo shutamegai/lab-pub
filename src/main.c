@@ -17,10 +17,11 @@
 // #define DEBUG_RETURN_TEST
 
 
-#define STAGE 8
+#define STAGE 4
 
 
 int main (void) {
+// DEBUG -----------------------------------------
 #ifndef DEBUG_RETURN_TEST
      //FILE *time_log;
      time_t  time_s, time_1, time_2, time_3, time_g;
@@ -96,7 +97,7 @@ int main (void) {
 #ifdef DEBUG_FRACTAL_PRINT
      printf("STAGE = %d\n", STAGE);
      for (m=0; m<edge_num; m++) {
-          for (n=0; n<edge_num; n++) printf("%d", fractal_main[m][n].init);
+          for (n=0; n<edge_num; n++) printf("%d", fractal_main.init[m][n]);
           printf("\n");
      }
 #endif //-----------------------------------------
@@ -117,9 +118,9 @@ int main (void) {
      // printf("STAGE = %d\n", STAGE);
      for (n=0; n<edge_num; n++) {
           for (m=0; m<edge_num; m++) {
-               all_p += fractal_main[m][n].p;
+               all_p += fractal_main.p[m][n];
                // observe
-               printf("%8d %8d %20.15f\n", n,     m, fractal_main[m][n].p);
+               printf("%8d %8d %20.15f\n", n,     m, fractal_main.p[m][n]);
           }
           printf("\n");
      }
@@ -133,18 +134,18 @@ int main (void) {
      for (n=0; n<edge_num; n++) {
           for (m=0; m<edge_num; m++) {
                // observe
-               printf("%8d %8d %20.15f\n", n,     m, fractal_main[m][n].p);
+               printf("%8d %8d %20.15f\n", n,     m, fractal_main.p[m][n]);
                if (m!=edge_num) {
-               printf("%8d %8d %20.15f\n", n,   m+1, fractal_main[m][n].p);
+               printf("%8d %8d %20.15f\n", n,   m+1, fractal_main.p[m][n]);
                }
           }
           printf("\n");
 
           for (m=0; m<edge_num; m++) {
                // observe
-               printf("%8d %8d %20.15f\n", n+1,   m, fractal_main[m][n].p);
+               printf("%8d %8d %20.15f\n", n+1,   m, fractal_main.p[m][n]);
                if (m!=edge_num) {
-               printf("%8d %8d %20.15f\n", n+1, m+1, fractal_main[m][n].p);
+               printf("%8d %8d %20.15f\n", n+1, m+1, fractal_main.p[m][n]);
                }
           }
           printf("\n");
@@ -189,9 +190,10 @@ int main (void) {
      fprintf(time_log, "diff : %.6f\n" , difftime(time_g, time_s));
      fclose(time_log);
      */
-#endif
+#endif //-----------------------------------------
 
 
+// DEBUG -----------------------------------------
 #ifdef DEBUG_RETURN_TEST
      int     n;
      int     edge_num=FRACTAL_edge(STAGE);
@@ -213,7 +215,7 @@ int main (void) {
      
      // FRACTAL_return
      FRACTAL_return(STAGE, edge_num, fractal_main);
-#endif
+#endif //-----------------------------------------
 
      
      return 0;

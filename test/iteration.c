@@ -93,7 +93,7 @@ void FRACTAL_probability (int FRACTAL_stage_num, int num, FRACTAL fractal) {
 #ifdef DEBUG_ITERATION
 #pragma omp parallel for private(n)
           for (m=0; m<num; m++) {
-#pragma vector always
+// #pragma vector always
           for (n=0; n<num; n++) {
                if (fractal.init[m][n] == 1) {
                     mean = (fractal.right_0[m][n] + fractal.up_1  [m][n]
@@ -118,7 +118,7 @@ void FRACTAL_probability (int FRACTAL_stage_num, int num, FRACTAL fractal) {
           
 #pragma omp parallel for private(n)
           for (m=0; m<num; m++) {
-#pragma vector always
+// #pragma vector always
           for (n=0; n<num; n++) {
                if (fractal.init[m][n] == 1) {
                     // right_0
@@ -158,7 +158,7 @@ void FRACTAL_probability (int FRACTAL_stage_num, int num, FRACTAL fractal) {
 /*
 #pragma omp parallel for private(n)
           for (m=0; m<num; m++) {
-#pragma vector always
+// #pragma vector always
           for (n=0; n<num; n++) {
                fractal.p[m][n]  = 0.0;
                
@@ -192,7 +192,7 @@ void FRACTAL_probability (int FRACTAL_stage_num, int num, FRACTAL fractal) {
 
 // #pragma omp parallel for private(m)
           for (n=0; n<num; n++) {
-#pragma vector always
+// #pragma vector always
                for (m=0; m<num; m++) {
                     // observe
                     fprintf(matrix_gif, "%8d %8d %20.15f\n",
@@ -203,7 +203,7 @@ void FRACTAL_probability (int FRACTAL_stage_num, int num, FRACTAL fractal) {
                }
                fprintf(matrix_gif, "\n");
 
-#pragma vector always
+// #pragma vector always
                for (m=0; m<num; m++) {
                     // observe
                     fprintf(matrix_gif, "%8d %8d %20.15f\n", n+1, m, fractal.p[m][n]);

@@ -9,7 +9,7 @@ test -f bin/fft.out && \
 echo '--------------------' > bin/debug/stderr.log
 
 cd test/
-gcc -lfftw3 -lm -o ../bin/fft.out fft.c 2>> ../bin/debug/stderr.log
+gcc -o ../bin/fft.out fft.c -lfftw3 -lm 2>> ../bin/debug/stderr.log
 cd ../
 
 echo '--------------------' >> bin/debug/stderr.log
