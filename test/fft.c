@@ -35,7 +35,7 @@ int main (void) {
      out = (fftw_complex*)fftw_malloc(mem_size);
 
      
-     fft_dat = fopen( ".//bin//data//stage//4//fractal_p.txt" , "r" );
+     fft_dat = fopen( ".//bin//data//fractal_p.dat" , "r" );
 
      if (fft_dat == NULL) {
           printf("FILE ERROR!\n"); return 0;
